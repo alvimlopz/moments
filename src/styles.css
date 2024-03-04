@@ -1,6 +1,6 @@
 * {
-  padding: 0;
-  margin: 0;
+  padding: 4px;
+  margin: 4px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   box-sizing: border-box;
   color: #444
@@ -15,3 +15,4 @@ a {
 a:hover {
   color: #dec129;
 }
+
