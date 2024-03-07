@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-moment-form',
@@ -9,8 +10,27 @@ export class MomentFormComponent implements OnInit{
 
   @Input() btnText!: string;
 
+  momentForm!: FormGroup;
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.momentForm = new FormGroup({
+      id: new FormControl(''),
+      title: new FormControl('', [Validators.required]),
+      description: new FormControl('', [Validators.required]),
+      image: new FormControl('')
+    })
+  }
+
+  get title (){
+    return this.momentForm.get('title')!;
+  }
+
+  get description (){
+    return this.momentForm.get('description')!;
+  }
+
+  submit(){
+    console.log("Envio o formulario");
   }
 
 }
