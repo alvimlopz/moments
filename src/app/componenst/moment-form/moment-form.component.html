@@ -6,12 +6,15 @@
         formControlName="title"
          required />
          <div *ngIf="title.invalid && formDir.submitted" class="validation-error">
-          <p>O titulo e obrigatorio</p>
+          <p *ngIf="title.errors?.['required']">O titulo e obrigatorio</p>
          </div>
     </div>
     <div class="form-group">
       <label for="description">Descrição:</label>
-      <textarea placeholder="O que aconteceu la?" required></textarea>
+      <textarea placeholder="O que aconteceu la?" formControlName="description" required></textarea>
+      <div *ngIf="description.invalid && formDir.submitted" class="validation-error">
+        <p *ngIf="description.errors?.['required']">A Descrição e obrigatorio</p>
+       </div>
     </div>
     <div class="form-group">
       <label for="image">Coloque sua foto: </label>

@@ -30,6 +30,9 @@ export class MomentFormComponent implements OnInit{
   }
 
   submit(){
+    if (this.momentForm.invalid){
+      return;
+    }
     console.log("Envio o formulario");
   }
 
