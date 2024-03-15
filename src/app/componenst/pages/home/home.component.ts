@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   moment: Moment[] = []
   baseApiUrl = environment.baseApiUrl
 
-  constructor(){}
+  constructor(private momentService: MomentService){}
 
   ngOnInit(): void {
   }
