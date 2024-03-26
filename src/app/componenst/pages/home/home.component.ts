@@ -26,8 +26,8 @@ export class HomeComponent implements OnInit {
           'pt-BR'
           );
       });
-      this.allMoments = data
-      this.moments = data
+      this.allMoments = data;
+      this.moments = data;
     })
   }
 
