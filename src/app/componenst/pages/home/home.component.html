@@ -1,6 +1,14 @@
 <div class="home-container">
-  <h1>Veja o que estão compartilhando</h1>
-  <!--Form de Busca-->
+  <h1>Jorge veja seus momentos ao longo dos anos</h1>
+
+  <div class="search-container">
+    <form>
+      <fa-icon [icon]="faSearch"></fa-icon>
+      <input type="text" placeholder="Ou busque por um moment.."
+      (input)="search($event)"
+      >
+    </form>
+  </div>
 
 <div *ngIf="moments.length > 0; else noMoments">
   <div class="moments-container">
