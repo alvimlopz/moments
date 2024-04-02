@@ -55,3 +55,15 @@ a:hover {
   width: 30%;
   position: relative;
 }
+
+.search-container fa-icon {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+.search-container input {
+  padding: .5em;
+  width: 100%;
+  text-align: center;
+}
