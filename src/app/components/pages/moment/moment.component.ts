@@ -5,6 +5,9 @@ import { MomentService } from '../../../services/moment.service';
 
 import { Moment } from '../../../moments';
 
+import { environment } from '../../../../environment/environment';
+import { faTimes, faEdit } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-moment',
   templateUrl: './moment.component.html',
@@ -12,6 +15,10 @@ import { Moment } from '../../../moments';
 })
 export class MomentComponent implements OnInit {
   moment?: Moment;
+  baseApiUrl = environment.baseApiUrl
+
+  faTimes = faTimes
+  faEdit = faEdit
 
 
   constructor(private momentService: MomentService, private route: ActivatedRoute){}
