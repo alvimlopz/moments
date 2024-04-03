@@ -99,12 +99,12 @@ color: #fff;
 
 .remove-btn,
 .remove-btn path {
- border-color: #007BFF;
+ border-color: #dc3545;
  color: #007BFF;
 }
 
 .remove-btn:hover,
 .remove-btn:hover path {
 color: #fff;
- color: #007BFF;
+ color: #dc3545;
 }
