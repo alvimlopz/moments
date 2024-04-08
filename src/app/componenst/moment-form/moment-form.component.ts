@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Moment } from '../../moments';
 
@@ -11,6 +11,7 @@ export class MomentFormComponent implements OnInit{
 
   @Output() onSubmit = new EventEmitter<Moment>()
   @Input() btnText!: string;
+  @Input() momentData: Moment | null = null;
 
   momentForm!: FormGroup;
 
