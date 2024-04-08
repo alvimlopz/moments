@@ -4,6 +4,7 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 
 import { Moment } from '../../../moments';
 import { MomentService } from '../../../services/moment.service';
+import { MessageService } from '../../../services/message.service';
 
 @Component({
   selector: 'app-edit-moment',
@@ -18,7 +19,8 @@ export class EditMomentComponent implements OnInit {
 
     private momentService : MomentService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private mensagemService: MessageService
   ){}
 
   ngOnInit(): void {
@@ -27,6 +29,26 @@ const id = Number(this.route.snapshot.paramMap.get('id'));
 this.momentService.getMoment(id).subscribe((item) => {
   this.moment = item.data;
 })
+  }
+
+  async editHandler(momentData: Moment){
+   const id = this.moment.id
+   const formData = new FormData()
+
+   formData.append('title', momentData.title);
+   formData.append('description', momentData.description);
+
+   if (momentData.image){
+    formData.append('image', momentData.image);
+   }
+
+   await this.momentService.updateMoment(id!, formData).subscribe()
+
+   this.mensagemService.add(`Momento ${id} foi atulaizado com sucesso` );
+
+   this.router.navigate(['/'])
+
+
   }
 
 }
